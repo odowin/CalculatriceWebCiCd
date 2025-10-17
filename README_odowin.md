@@ -33,7 +33,7 @@ Vous apprendrez à :
 
 ### 1. Création du dépôt GitHub
 
-L’initiateur crée un dépôt public nommé calculatrice-web
+L’**initiateur** crée un dépôt public nommé calculatrice-web
 
 Il invite ses deux coéquipiers comme collaborateurs
 
@@ -151,15 +151,15 @@ git checkout -b dev
 git push origin dev
 ```
 
-Puis, l'initiateur et le réparateur tirent les changements en local, et se déplacent sur la branche ```dev```.
+Puis, l'**initiateur** et le réparateur tirent les changements en local, et se déplacent sur la branche ```dev```.
 
 ### 2. Création des branches par fonctionnalité
-- L'initiateur créé une branche ```feature/addition``` (partant de ```dev```) pour implémenter l'addition
+- L'**initiateur** créé une branche ```feature/addition``` (partant de ```dev```) pour implémenter l'addition
 - L'assureur créé une branche ```feature/substraction``` (partant de ```dev```) pour implémenter la soustraction
 - Le réparateur créé une branche ```feature/multiplication``` (partant de ```dev```) pour implémenter la multiplication
 - Jouez à pierre feuille ciseaux pour déterminer qui créera la branche ```feature/division``` pour implémenter la division
 - Celui ou celle qui fait un puits perd d'office et doit implémenter la division.
-- Initiateur VS Réparateur, puis le/la gagnant(e) contre l'assureur. 
+- **initiateur** VS Réparateur, puis le/la gagnant(e) contre l'assureur. 
 
 ## 🧩 Étape 3 : Implémentation des fonctions
 Exemple pour ```feature/addition```
@@ -187,7 +187,7 @@ Une fois vos fonctionnalités implémentées, commit et push sur leurs branches 
 
 
 ## 🧪 Étape 4 : Intégration Continue (CI)
-L’initiateur se déplace sur ```dev```, et créé une branche dédiée à la mise en place de la pipeline CI/CD appelée (par exemple) ```infra/ci_cd_setup```.
+L’**initiateur** se déplace sur ```dev```, et créé une branche dédiée à la mise en place de la pipeline CI/CD appelée (par exemple) ```infra/ci_cd_setup```.
 Puis, il se déplace dessus et ajoute un fichier package.json avec le contenu suivant :
 ```
 {
@@ -294,7 +294,7 @@ Il add, commit et push ces changements.
 
 ## 🧪 Étape 6 : Installation du CI/CD
 
-L'initiateur ouvre une PR depuis ```infra/ci_cd_setup``` vers ```dev```
+L'**initiateur** ouvre une PR depuis ```infra/ci_cd_setup``` vers ```dev```
 
 Les trois membres du groupe review la PR avant de la valider pour merge ```infra/ci_cd_setup``` sur ```dev``` pour y ajouter les fichiers de configuration de la future pipeline CI/CD
 
