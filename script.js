@@ -7,6 +7,14 @@ export function divide(a, b) {
   return a / b;
 }
 
+export function subtract(a, b) {
+   return a - b; 
+}
+
+export function multiply(a, b) {
+   return a * b; 
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const display = document.getElementById("display");
   const buttons = document.getElementById("buttons");
