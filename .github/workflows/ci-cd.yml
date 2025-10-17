@@ -1,0 +1,50 @@
+name: CI/CD Pipeline
+
+on:
+  pull_request:
+    branches: [dev, main]
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    name: Intégration Continue (Lint + Tests)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🧾 Checkout du code
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Installation de Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: 📦 Installation des dépendances
+        run: npm ci
+
+      - name: 🧹 Lint du code
+        run: npm run lint
+
+      - name: 🧪 Tests unitaires
+        run: npm test
+
+  cd:
+    name: Déploiement Continu (Docker)
+    needs: ci
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: 🧾 Checkout du code
+        uses: actions/checkout@v4
+
+      - name: 🐳 Construction de l'image Docker
+        run: docker build -t calculatrice-web .
+
+      - name: 🚀 Lancement du conteneur Docker
+        run: docker run -d -p 8080:80 calculatrice-web
