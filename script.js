@@ -28,3 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   console.log("Calculatrice initialisée !");
 });
+
+export function subtract(a, b) {
+  return a - b;
+}
